@@ -14,12 +14,13 @@ public class Cibil {
         user.setCIBIL(cibil);
         int loanpaid=user.getAmountPaid();
         int maxLoanAmount=0;
-        if (cibil==-1 || loanpaid == 0) maxLoanAmount=1000;
+        if (cibil==-1 || loanpaid == 0) maxLoanAmount=10000;
         else maxLoanAmount=cibil*loanpaid/700;
         user.setMaxCredit(maxLoanAmount);
         return user ;
     }
 
+    // percentage change addition for each case of performance parameters to get CIBIL Score
     public int getCIBIL(User user){
         int score=300;
         if (pastPerformance(user)!=-1)
@@ -38,6 +39,7 @@ public class Cibil {
     }
 
 
+    // Past performance score is calculation on basis of pending, cleared overdues.
     int pastPerformance(User user){
         int score=0;
         int total=user.getLoanCount();
@@ -65,6 +67,7 @@ public class Cibil {
         return score;
     }
 
+    // secured and unsecured loan ratio calculation and then duration basis score calculation
     int creditMixDuration(User user){
         int score=0;
         int unSecLoan=user.getUnsecredLoanCount();
@@ -87,6 +90,8 @@ public class Cibil {
         return score;
     }
 
+    // leverage calculation score on basis of user's current loan amount
+    // adding the factor of deflection from credit limit and loan with mFactor = 70
     int leverage(User user){
         int score=0;
         int presentLoneAmount=user.getPresentLoanAmount();
@@ -103,6 +108,7 @@ public class Cibil {
         return score;
     }
 
+    // other factor score calculation on basis of disapproved loans
     int otherFactor(User user){
         int score=0;
         int disapproved=user.getDisapprovedCount();
