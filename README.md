@@ -2,7 +2,7 @@
 # Fundon App ( CodeQ )
 
 Fundon, a C2C (Customer to Customer) personal loan lending platform based on MVVM model which can be used be request loan from other users on the application
-and can also lend money to them.\ :)
+and can also lend money to them.
 
 
 ### Features of the Application
@@ -79,10 +79,13 @@ The detailed of every feature can be viewed from the following link:
 
 API Documentation: 
 
-[postman](https://www.getpostman.com/collections/61062ef5bc5361f9ace9)
+[Postman](https://www.getpostman.com/collections/61062ef5bc5361f9ace9)
     
     https://www.getpostman.com/collections/61062ef5bc5361f9ace9
     
+[Local Postman](https://www.getpostman.com/collections/ee040701f6832d4c613e)
+    
+   https://www.getpostman.com/collections/ee040701f6832d4c613e
     
 ---***---***---***---
     
